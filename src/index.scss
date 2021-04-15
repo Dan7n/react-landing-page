@@ -1,0 +1,60 @@
+@import "./partials/mixins";
+@import "./partials/variables";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    font-family: 'Noto Sans', sans-serif;
+    position: relative;
+    background-color: $main-bg-right;
+
+    .navbar {
+        position: absolute;
+        width: 100%;
+        @include center-row;
+        justify-content: space-between;
+        padding: $navbad-spacing-y $page-spacing;
+        z-index: 5;
+
+        .navbar-elements {
+            @include center-row;
+            list-style-type: none;
+            gap: 1.5rem;
+            li {
+                @include center-row;
+                svg {
+                    width: 1rem;
+                }
+                .search-icon {
+                    width: 1.3rem;
+                }
+            }
+        }
+    }
+
+    .overlay-left {
+        position: sticky;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 33.3%;
+        height: 100vh;
+        background-color: $main-bg-left;
+    }
+
+    .landing-page {
+        width: 100%;
+        height: 100%;
+    }
+}
+

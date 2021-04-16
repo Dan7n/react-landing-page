@@ -9,7 +9,7 @@ function Navbar(props) {
     useEffect(() => {
         gsap.from(
             navbarElements.children,
-            {opacity: 0, delay: 1, stagger: 0.04}
+            {opacity: 0, delay: 1.9, stagger: 0.04}
         )
     }, [])
 

@@ -19,6 +19,7 @@
 
 @mixin btn-hover($backgroundColor, $textColor) {
     transition: all 200ms ease;
+    @content;
     &:hover {
         background-color: $backgroundColor;
         color: $textColor

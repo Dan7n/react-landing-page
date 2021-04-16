@@ -1,0 +1,86 @@
+@import "./mixins";
+@import "./variables";
+
+body {
+    #root {
+        .content-section {
+            width: 100%;
+            @include center-col;
+            padding: $page-spacing;
+    
+            @media screen and (max-width: 600px) {
+                padding: 0;
+                margin-top: 6rem;
+            }
+    
+            .content-article {
+                width: 100%;
+                background-color: white;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                grid-column-gap: 0px;
+                grid-row-gap: 0px;
+
+                .content-header {
+                    grid-area: 1 / 1 / 2 / 4;
+                    @include center-hv;
+                    padding: 0 $page-spacing;
+
+                    @media screen and (max-width: 600px) {
+                        padding: 0 calc($page-spacing * 0.5);
+
+                    }
+
+                    h1 {
+                        font-size: 2.6rem;
+                        color: $main-bg-left;
+                        text-align: center;
+                        padding: $page-spacing 0;
+
+                        @media screen and (max-width: 600px) {
+                            font-size: 2rem;
+                            text-align: left;
+                        }
+                    }
+                }
+                .content-body {
+                    grid-area: 2 / 2 / 4 / 4;
+
+
+                    @media screen and (max-width: 600px) {
+                        grid-area: 2 / 1 / 4 / 4;
+                        padding: 0 0.3rem;
+                        font-size: 1.3rem;
+                    }
+                }
+                .content-aside {
+                    grid-area: 2 / 1 / 4 / 2;
+                    @include center-hv;
+                    position: relative;
+                    img {
+                        max-width: 200px;
+                        max-height: 200px;
+                    }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        width: 60%;
+                        border-top: 3px solid black;
+                        transform: translateX(-50%);
+                        border-radius: 4px;
+    
+                    }
+    
+                    @media screen and (max-width: 600px) {
+                        display: none;
+                    }
+    
+                }
+    
+            }
+        }
+    }
+}

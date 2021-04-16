@@ -1,0 +1,98 @@
+@import "./mixins";
+@import "./variables";
+body {
+    #root {
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            @include center-row;
+            justify-content: space-between;
+            padding: $navbad-spacing-y $page-spacing;
+            z-index: 5;
+    
+            .navbar-elements {
+                @include center-row;
+                list-style-type: none;
+                gap: 1.5rem;
+                li {
+                    @include center-row;
+                    cursor: pointer;
+                    svg {
+                        width: 1rem;
+                    }
+                    .search-icon {
+                        width: 1.3rem;
+                    }
+                }
+    
+                @media screen and (max-width: 1070px) {
+                    display: none;
+                }
+            }
+    
+    
+    
+            label {
+                position: absolute;
+                right: $page-spacing;
+                top: $navbad-spacing-y;
+                display: none;
+                z-index: 10;
+                img {
+                    width: 5rem;
+                }
+                input {
+                    opacity: 0;
+                }
+                @media screen and (max-width: 1070px) {
+                    display: block;
+                }
+            }
+    
+            .navbar-mobile {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(black, 0.9);
+                animation: fade-in 100ms ease;
+                list-style-type: none;
+                @include center-col;
+                align-items: flex-start;
+                padding-left: 8rem;
+                li {
+                    color: white;
+                    font-size: 4rem;
+                    @include center-row;
+                    gap: 1rem;
+                    animation: fade-in 800ms ease;
+                    transition: all 200ms ease;
+                    cursor: pointer;
+                    svg {
+                        width: 6rem;
+                        height: 6rem;
+                        fill: white;
+                        path {
+                            fill: white;
+                            stroke: white;
+                        }
+                    }
+                    &:hover {
+                        color: $main-bg-right;
+                    }
+                }
+            }
+    
+            @keyframes fade-in {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+}

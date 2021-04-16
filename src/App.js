@@ -2,6 +2,7 @@
 import NavbarContainer from "./components/header/NavbarContainer"
 import LandingPageContainer from "./components/landingPage/LandingPageContainer"
 import OverlayDiv from "./components/landingPage/OverlayDiv"
+import ContentPageContainer from "./components/content/ContentPageContainer"
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,6 +16,7 @@ function App() {
       <NavbarContainer />
       <OverlayDiv />
       <LandingPageContainer />
+      <ContentPageContainer />
     </>
   );
 }

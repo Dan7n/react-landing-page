@@ -10,13 +10,19 @@
     box-sizing: border-box;
 }
 
-body {
-    z-index: 5;
+#root {
     width: 100%;
     height: 100%;
+}
+
+body {
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
     font-family: 'Noto Sans', sans-serif;
     position: relative;
     background-color: $main-bg-right;
+    overflow: hidden;
 
     .navbar {
         position: absolute;
@@ -32,6 +38,7 @@ body {
             gap: 1.5rem;
             li {
                 @include center-row;
+                cursor: pointer;
                 svg {
                     width: 1rem;
                 }
@@ -39,22 +46,150 @@ body {
                     width: 1.3rem;
                 }
             }
+
+            @media screen and (max-width: 1070px) {
+                display: none;
+            }
+        }
+
+
+
+        label {
+            position: absolute;
+            right: $page-spacing;
+            top: $navbad-spacing-y;
+            display: none;
+            z-index: 10;
+            img {
+                width: 5rem;
+            }
+            input {
+                opacity: 0;
+            }
+            @media screen and (max-width: 1070px) {
+                display: block;
+            }
+        }
+
+        .navbar-mobile {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(black, 0.9);
+            animation: fade-in 100ms ease;
+            list-style-type: none;
+            @include center-col;
+            align-items: flex-start;
+            padding-left: 8rem;
+            li {
+                color: white;
+                font-size: 4rem;
+                @include center-row;
+                gap: 1rem;
+                animation: fade-in 800ms ease;
+                transition: all 200ms ease;
+                cursor: pointer;
+                svg {
+                    width: 6rem;
+                    height: 6rem;
+                    fill: white;
+                    path {
+                        fill: white;
+                        stroke: white;
+                    }
+                }
+                &:hover {
+                    color: $main-bg-right;
+                }
+            }
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 0.9;
+            }
         }
     }
 
     .overlay-left {
-        position: sticky;
+        position: absolute;
         left: 0;
         top: 0;
         z-index: -1;
-        width: 33.3%;
-        height: 100vh;
+        width: clamp(33.3%, 40%, 60%);
+        height: 100%;
         background-color: $main-bg-left;
+        @media screen and (max-width: 1350px) {
+            width: 100% !important;
+            height: 30vh;
+        }
     }
 
     .landing-page {
         width: 100%;
         height: 100%;
+        position: relative;
+        @include center-col;
+        align-items: flex-end;
+
+        @media screen and (max-width: 1350px) {
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .landing-page-img {
+            width: 100%;
+            max-width: 30rem;
+            height: auto;
+            position: absolute;
+            left: clamp(10%, 10%, 5%);
+            top: 25%;
+
+            @media screen and (max-width: 1350px) {
+                position: relative;
+                top: 0 !important;
+                left: 0 !important;
+            }
+
+            @media screen and (max-width: 600px) {
+                top: 3rem !important;
+                max-width: 19rem;
+            }
+        }
+
+        .landing-page-text {
+            min-width: 30%;
+            max-width: 40%;
+            padding-right: 10rem;
+            padding-bottom: 11rem;
+            z-index: 5;
+
+            @media screen and (max-width: 1350px) {
+                width: 100%;
+                padding: 0;
+            }
+
+            h1 {
+                z-index: 5;
+                font-size: clamp(1ch, 5ch, 6ch);
+                font-variant: small-caps;
+                font-weight: 700;
+                color: $main-bg-left;
+
+                @media screen and (max-width: 600px) {
+                    text-align: center;
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                max-width: 100%;
+            }
+        }
     }
 }
 

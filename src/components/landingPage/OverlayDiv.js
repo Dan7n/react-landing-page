@@ -10,10 +10,9 @@ export default function LandingPageContainer() {
     let overlayDiv = useRef(null)
 
     useEffect(() => {
-        gsap.fromTo (
+        gsap.from (
             overlayDiv,
-            {width: 0},
-            {width: "33.3vw", duration: 1.7, ease: "power3.out"},
+            {width: 0, duration: 1.7, ease: "power3.out"},
         )
     }, [])
 

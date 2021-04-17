@@ -3,11 +3,7 @@ import NavbarContainer from "./components/header/NavbarContainer"
 import LandingPageContainer from "./components/landingPage/LandingPageContainer"
 import OverlayDiv from "./components/landingPage/OverlayDiv"
 import ContentPageContainer from "./components/content/ContentPageContainer"
-
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import ArticlesContainer from "./components/articles/ArticlesContainer"
 
 
 function App() {
@@ -17,6 +13,7 @@ function App() {
       <OverlayDiv />
       <LandingPageContainer />
       <ContentPageContainer />
+      <ArticlesContainer />
     </>
   );
 }

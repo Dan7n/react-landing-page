@@ -93,6 +93,7 @@ body {
                     }
     
                     a {
+                        position: relative;
                         text-decoration: none;
                         font-size: 1.2rem;
                         color: white;
@@ -101,6 +102,41 @@ body {
                         padding: 0.4rem 1.2rem;
                         @include btn-hover(white, $main-bg-left) {
                             border: 1px solid $main-bg-left;
+                        }
+
+                        svg {
+                            position: absolute;
+                            top: -9rem;
+                            right: -13rem;
+                            width: 12rem;
+                            height: 12rem;
+                            pointer-events: none;
+
+                            #path1 {
+                                stroke-dasharray: 982;
+                                stroke-dashoffset: 982;
+                                animation: animateArrow 2s ease;
+                                animation-fill-mode: forwards;
+                                animation-delay: 4s;
+                            }
+
+                            #path2 {
+                                stroke-dasharray: 177;
+                                stroke-dashoffset: 177;
+                                animation: animateArrow 1s ease;
+                                animation-fill-mode: forwards;
+                                animation-delay: 6s;
+                            }
+
+                            @media screen and (max-width: 600px) {
+                                display: none;
+                            }
+                        }
+
+                        @keyframes animateArrow {
+                            to {
+                                stroke-dashoffset: 0;
+                            }
                         }
                     }
         

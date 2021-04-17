@@ -1,5 +1,6 @@
 import React, {useRef, useEffect} from "react"
 import { gsap } from "gsap";
+import {SwirlyArrow} from "./../header/svgs"
 
 export default function LandingPageContainer() {
     let img = useRef(null)
@@ -36,7 +37,9 @@ export default function LandingPageContainer() {
                     className="landing-page-text"
                     ref={el => text = el}>
                         <h1>Some Bold Text About How Cool This Site Is</h1>
-                        <a href="#">Explore</a>
+                        <a href="#">Explore
+                            <SwirlyArrow />
+                        </a>
                 </div>
             </div>
         </section>

@@ -1,9 +1,10 @@
 import React from "react"
 import Content from "./Content"
+import Author from "./Author"
 
 export default function ContentPageContainer() {
     return (
-        <section className="content-section">
+        <section className="content-section" id="header1">
             <article className="content-article">
                 <Content
                     header="Some header explaining the revolutionary new feature we’re announcing in this article."
@@ -24,6 +25,9 @@ export default function ContentPageContainer() {
                     src="./illustration3.png"
                     numOfParagraphTags={3}
                 />
+            </article>
+            <article className="content-article author">
+                <Author />
             </article>
         </section>
     )

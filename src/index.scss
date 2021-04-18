@@ -28,6 +28,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     z-index: 5;
     width: 100vw;

@@ -29,7 +29,6 @@ body {
 
                     @media screen and (max-width: 600px) {
                         padding: 0 calc($page-spacing * 0.5);
-
                     }
 
                     h1 {
@@ -80,6 +79,77 @@ body {
     
                 }
     
+            }
+        }
+
+        .author {
+
+            .content-aside {
+                @media screen and (max-width: 880px) {
+                    display: none !important;
+                }
+            }
+
+            @media screen and (max-width: 880px) {
+                grid-template-columns: 1fr !important;
+                grid-template-rows: 1fr !important;
+                padding: $page-spacing !important;
+            }
+
+            .content-body {
+                padding-bottom: $page-spacing;
+                @include center-col;
+                position: relative;
+                padding-top: $page-spacing;
+
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    width: 60%;
+                    border-top: 3px solid black;
+                    transform: translateX(-50%);
+                    border-radius: 4px;
+                }
+
+                .content-body-header {
+                    h1 {
+                        font-size: 2.3rem;
+                        font-weight: 700;
+                    }
+                }
+
+                .content-body-body {
+                    @include center-row;
+                    flex-direction: row-reverse;
+                    gap: 3rem;
+
+                    h2 {
+                        font-size: 1.4rem;
+                        font-weight: 500;
+                    }
+                    p {
+                        width: 60%;
+
+                        @media screen and (max-width: 750px) {
+                            width: 100% !important;
+
+                        }
+                    }
+                }
+                
+                .content-body-img {
+                    img {
+                        max-width: 200px;
+                        max-height: 200px;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 880px) {
+                
             }
         }
     }

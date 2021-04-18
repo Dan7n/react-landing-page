@@ -37,7 +37,7 @@ export default function LandingPageContainer() {
                     className="landing-page-text"
                     ref={el => text = el}>
                         <h1>Some Bold Text About How Cool This Site Is</h1>
-                        <a href="#">Explore
+                        <a href="#header1">Explore
                             <SwirlyArrow />
                         </a>
                 </div>

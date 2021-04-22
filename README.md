@@ -4,6 +4,9 @@ Homework assignment to learn about design, animations, branding, and brand ident
 
 I chose Dropbox's blog as my inspiration, and I chose to do the project in React as I'm teaching myself how to use it.
 
+[Click here for a live demo of the site](https://zealous-engelbart-0b15c1.netlify.app/)
+
+
 **To start using this repo:**
 
  1. Open your terminal to a directory of your choosing

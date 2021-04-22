@@ -28,7 +28,7 @@ body {
                     padding: 0 $page-spacing;
 
                     @media screen and (max-width: 600px) {
-                        padding: 0 calc($page-spacing * 0.5);
+                        padding: 0 calc(#{$page-spacing} * 0.5);
                     }
 
                     h1 {

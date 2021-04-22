@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Subscribe() {
     return (
-        <div className="subscribe scroll">
+        <div className="scroll">
             <div>
                 <span>Subscribe</span>
                 <span>Subscribe</span>

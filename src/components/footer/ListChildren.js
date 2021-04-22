@@ -10,12 +10,13 @@ export default function ListChildren(props) {
     }
 
     return (
-        <div>
-            {liTags(this.props.liTags)}
-        </div>
+        <>
+            {liTags(props.liTags)}
+        </>
     )
 }
 
 ListChildren.defaultProps = {
-    liTags: 4
+    liTags: 4,
+    content: "Dummy sublist text"
 }

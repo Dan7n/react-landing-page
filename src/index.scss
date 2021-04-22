@@ -41,10 +41,12 @@ body {
     font-family: 'Noto Sans', sans-serif;
     position: relative;
     background-color: $main-bg-right;
+    overflow-x: hidden;
     @include center-col;
     
     #root {
         width: 100%;
+        height: 100%;
         @include center-col;
     }
 

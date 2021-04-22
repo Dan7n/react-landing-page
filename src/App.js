@@ -4,6 +4,7 @@ import LandingPageContainer from "./components/landingPage/LandingPageContainer"
 import OverlayDiv from "./components/landingPage/OverlayDiv"
 import ContentPageContainer from "./components/content/ContentPageContainer"
 import ArticlesContainer from "./components/articles/ArticlesContainer"
+import FooterContainer from "./components/footer/FooterContainer"
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <LandingPageContainer />
       <ContentPageContainer />
       <ArticlesContainer />
+      <FooterContainer />
     </>
   );
 }

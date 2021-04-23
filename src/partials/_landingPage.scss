@@ -10,7 +10,7 @@ body {
             @include center-col;
             align-items: flex-end;
     
-            @media screen and (max-width: 1350px) {
+            @media screen and (max-width: 1600px) {
                 align-items: center;
                 justify-content: space-evenly;
             }
@@ -26,10 +26,14 @@ body {
                 // position: absolute;
                 // top: 25%;
     
-                @media screen and (max-width: 1350px) {
+                @media screen and (max-width: 1600px) {
                     grid-template-columns: 1fr;
                     grid-template-rows: repeat(2, 1fr);
-                    }
+                    gap: 5rem
+                }
+                @media screen and (max-width: 800px) {
+                    gap: 1rem;
+                }
     
                     .img-container {
                         @include center-row;
@@ -46,13 +50,19 @@ body {
                             // left: clamp(10%, 10%, 5%);
                             // top: 25%;
                 
-                            @media screen and (max-width: 1350px) {
+                            @media screen and (max-width: 1600px) {
                                 top: 0 !important;
                                 left: 0 !important;
                                 margin-left: 0;
                             }
-                
+
                             @media screen and (max-width: 600px) {
+                                top: -3rem !important;
+                                max-width: 24rem;
+                                margin-top: 9rem;
+                            }
+                
+                            @media screen and (max-width: 450px) {
                                 top: 3rem !important;
                                 max-width: 19rem;
                                 margin-top: 9rem;
@@ -61,22 +71,20 @@ body {
                     }
         
                 .landing-page-text {
-                    // min-width: 30%;
-                    // max-width: 40%;
                     padding-right: 10rem;
                     padding-bottom: 1rem;
-                    z-index: 5;
+                    // z-index: 5;
                     height: 100%;
                     @include center-col;
                     justify-content: space-between;
         
-                    @media screen and (max-width: 1350px) {
+                    @media screen and (max-width: 1600px) {
                         width: 100%;
                         padding: 0;
                     }
         
                     h1 {
-                        z-index: 5;
+                        // z-index: 5;
                         font-size: clamp(1.5ch, 5ch, 6ch);
                         font-variant: small-caps;
                         font-weight: 700;
@@ -85,7 +93,7 @@ body {
                         font-family: 'Abril Fatface', cursive;
                         width: 50%;
         
-                        @media screen and (max-width: 600px) {
+                        @media screen and (max-width: 800px) {
                             text-align: center;
                             width: 100%;
                             margin-top: 6rem;

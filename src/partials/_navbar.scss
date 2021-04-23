@@ -15,14 +15,31 @@ body {
                 @include center-row;
                 list-style-type: none;
                 gap: 1.5rem;
+                z-index: 5;
                 li {
                     @include center-row;
                     cursor: pointer;
+                    transition: all ease 200ms;
                     svg {
                         width: 1rem;
+                        transition: all ease 200ms;
+                        path {
+                            transition: all ease 200ms;
+                        }
                     }
                     .search-icon {
                         width: 1.3rem;
+                    }
+
+                    &:hover {
+                        color: white;
+                        svg {
+                            stroke: white;
+                            path {
+                                stroke: white;
+    
+                            }
+                        }
                     }
                 }
     
@@ -34,12 +51,13 @@ body {
     
     
             label {
+                margin: -0.9rem -3.8rem;
                 position: absolute;
                 right: $page-spacing;
                 top: $navbad-spacing-y;
                 display: none;
                 z-index: 10;
-                img {
+                picture {
                     width: 5rem;
                 }
                 input {
@@ -61,12 +79,12 @@ body {
                 list-style-type: none;
                 @include center-col;
                 align-items: flex-start;
-                padding-left: 8rem;
+                padding-left: 3rem;
                 li {
                     color: white;
-                    font-size: 4rem;
+                    font-size: 3.1rem;
                     @include center-row;
-                    gap: 1rem;
+                    gap: 1.4rem;
                     animation: fade-in 800ms ease;
                     transition: all 200ms ease;
                     cursor: pointer;

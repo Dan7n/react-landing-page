@@ -1,10 +1,30 @@
-import React from "react"
+import React, {useRef, useEffect} from "react"
 import Content from "./Content"
 import Author from "./Author"
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 
 export default function ContentPageContainer() {
+    let sectionRef = useRef(null)
+
+    useEffect(() => {
+        gsap.from(
+            sectionRef, {
+                scrollTrigger: {
+                    trigger: sectionRef,
+                    start: "top bottom",
+                },
+                opacity: 0,
+                duration: 1,
+                ease: "slow"
+            }
+        )
+    })
+
     return (
-        <section className="content-section" id="header1">
+        <section className="content-section" id="header1" ref={el => sectionRef = el}>
             <article className="content-article">
                 <Content
                     header="Some header explaining the revolutionary new feature we’re announcing in this article."

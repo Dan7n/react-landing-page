@@ -7,12 +7,12 @@ function Navbar(props) {
     let navbarElements = useRef(null)
 
     useEffect(() => {
+        console.log(navbarElements.children)
         gsap.from(
             navbarElements.children,
             {opacity: 0, delay: 1.9, stagger: 0.04}
         )
     }, [])
-
 
     return (
         <ul className="navbar-elements" ref={el => navbarElements = el}>
@@ -38,11 +38,3 @@ function Navbar(props) {
 }
 
 export default Navbar
-
-
-/*
-                searchIcon={searchIcon}  
-                arrowRight={arrowRight}
-                carretDown={carretDown}
-
-*/

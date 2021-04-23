@@ -7,6 +7,11 @@ body {
             width: 100%;
             @include center-col;
             padding: $page-spacing;
+
+            @media screen and (max-width: 800px) {
+                padding: 1.4rem;
+                margin-top: -2rem;
+            }
     
             @media screen and (max-width: 600px) {
                 padding: 0;
@@ -19,8 +24,10 @@ body {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 grid-template-rows: repeat(3, 1fr);
-                grid-column-gap: 0px;
-                grid-row-gap: 0px;
+
+                @media screen and (max-width: 500px) {
+                    grid-template-rows: 1fr;
+                }
 
                 .content-header {
                     grid-area: 1 / 1 / 2 / 4;
@@ -28,7 +35,7 @@ body {
                     padding: 0 $page-spacing;
 
                     @media screen and (max-width: 600px) {
-                        padding: 0 calc(#{$page-spacing} * 0.5);
+                        padding: 0rem calc(#{$page-spacing} * 0.3);
                     }
 
                     h1 {
@@ -38,28 +45,31 @@ body {
                         padding: $page-spacing 0;
 
                         @media screen and (max-width: 600px) {
-                            font-size: 2rem;
+                            font-size: 2.3rem;
                             text-align: left;
                         }
                     }
                 }
                 .content-body {
                     grid-area: 2 / 2 / 4 / 4;
-
+                    position: relative;
 
                     @media screen and (max-width: 600px) {
                         grid-area: 2 / 1 / 4 / 4;
                         padding: 0 0.3rem;
-                        font-size: 1.3rem;
+                        font-size: 1.4rem;
+                        padding: 0 calc(#{$page-spacing} * 0.5);
                     }
                 }
                 .content-aside {
                     grid-area: 2 / 1 / 4 / 2;
                     @include center-hv;
+                    align-self: baseline;
                     position: relative;
                     img {
                         max-width: 200px;
                         max-height: 200px;
+                        margin-top: $page-spacing;
                     }
                     &::before {
                         content: "";
@@ -93,7 +103,7 @@ body {
             @media screen and (max-width: 880px) {
                 grid-template-columns: 1fr !important;
                 grid-template-rows: 1fr !important;
-                padding: $page-spacing !important;
+                padding: $page-spacing 1rem !important;
             }
 
             .content-body {
@@ -118,17 +128,28 @@ body {
                     h1 {
                         font-size: 2.3rem;
                         font-weight: 700;
+
+                        @media screen and (max-width: 600px) {
+                            padding: 1.5rem;
+                        }
+
+                        @media screen and (max-width: 320px) {
+                            font-size: 1.5rem;
+                        }
                     }
                 }
 
                 .content-body-body {
                     @include center-row;
                     flex-direction: row-reverse;
-                    gap: 3rem;
+                    justify-content: space-evenly;
+                    width: 100%;
+                    gap: 5rem !important;
 
                     h2 {
                         font-size: 1.4rem;
                         font-weight: 500;
+
                     }
                     p {
                         width: 60%;
@@ -136,6 +157,24 @@ body {
                         @media screen and (max-width: 750px) {
                             width: 100% !important;
 
+                        }
+                    }
+
+                    @media screen and (max-width: 600px) {
+                        flex-direction: column-reverse;
+                        h2 {
+                            margin-top: 1.2rem;
+                            font-size: 1.9rem;
+                        }
+                    }
+
+                    @media screen and (max-width: 320px) {
+                        h2 {
+                            font-size: 1.5rem;
+                            font-weight: 900;
+                            margin-bottom: 1.5rem;
+                            text-align: center;
+                            white-space: nowrap;
                         }
                     }
                 }
@@ -146,10 +185,10 @@ body {
                         max-height: 200px;
                     }
                 }
-            }
 
-            @media screen and (max-width: 880px) {
-                
+                @media screen and (max-width: 700px) {
+                    padding: 0;
+                }
             }
         }
     }

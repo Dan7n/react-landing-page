@@ -13,6 +13,7 @@ body {
             @media screen and (max-width: 1400px) {
                 align-items: center;
                 justify-content: space-evenly;
+                
             }    
             .inner-container {
                 display: grid;
@@ -37,6 +38,15 @@ body {
                     @media screen and (max-height: 800px) {
                         margin-top: 40rem;
                         margin-bottom: 23rem;
+                    }
+                }
+
+                @media screen and (max-width: 800px) {
+                    
+
+                    @media screen and (max-height: 1090px) {
+                        margin-top: 0;
+                        margin-bottom: 0;
                     }
                 }
     
@@ -65,12 +75,14 @@ body {
                                 top: -3rem !important;
                                 max-width: 24rem;
                                 margin-top: 9rem;
+                                
                             }
                 
                             @media screen and (max-width: 450px) {
                                 top: 3rem !important;
                                 max-width: 19rem;
                                 margin-top: 9rem;
+                                
                             }
                         }
                     }
@@ -89,6 +101,12 @@ body {
 
                         @media screen and (max-height: 800px) {
                             height: 50%;
+                        }
+                    }
+
+                    @media screen and (max-width: 800px) {
+                        @media screen and (max-height: 800px) {
+                            height: 100% !important;
                         }
                     }
         

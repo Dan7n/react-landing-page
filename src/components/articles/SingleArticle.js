@@ -35,7 +35,6 @@ export default function SingleArticle(props) {
                 <h2>{props.header}</h2>
                 <p>{props.author}</p>
             </div>
-    
         </article>
     )
 }

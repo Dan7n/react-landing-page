@@ -27,7 +27,11 @@ export default function NavbarContainer() {
             <img src="./hamgurger.svg" alt="hamburder menu" />
                 <input type="checkbox" id="hamgurgerToggle" onChange={handleChange} checked={checked} />
             </label>
-            <img src="./dropbox-logo.svg" alt="Dropbox logo" ref={el => logo = el} />
+            <picture>
+                <source srcSet="./dropbox-logo-mini.svg" media="(max-width: 800px)" />
+                <img src="./dropbox-logo.svg" alt="Dropbox logo" ref={el => logo = el} />
+            </picture>
+
             <Navbar />
             {checked && <NavbarMobile />}
         </nav>
